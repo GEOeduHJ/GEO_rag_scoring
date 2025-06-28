@@ -19,11 +19,11 @@ from langchain.chains.retrieval_qa.base import RetrievalQA  # 변경됨
 
 def main():
     st.set_page_config(
-        page_title="지리 교육 수행 평가 시스템",
+        page_title="지리과 서답형 문항 자동채점 플랫폼",
         page_icon=":memo:"
     )
 
-    st.title(":world_map: 지리 교육 수행 평가 시스템")
+    st.title(":world_map: 지리과 서답형 문항 자동채점 플랫폼")
     
     # 세션 상태 초기화
     if "reference_docs" not in st.session_state:
@@ -495,7 +495,6 @@ def evaluate_answer(student_answer, model_answer, criteria, qa_chain):
     다음 형식으로 답변해주세요:
     점수: "채점 기준"에 따라 평가하여 도출한 점수를 합산해주세요. 이때, 평가 기준에만 해당하면 최대한 점수를 부여하세요.
     피드백: "채점 기준"을 바탕으로 학생의 답안을 평가한 결과를 "참고 문서"를 통해 설명해주세요. "채점 기준"에서 제시하는 영역별로 나누어 피드백을 제공합니다.
-    개선 제안: 학생의 답안 수정 방향 예시를 제시하세요.
     """
     
     # 관련 문서 검색
